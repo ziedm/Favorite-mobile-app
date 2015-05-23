@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+    <!--
+  * Copyright © 2012-2015, Intel Corporation. All rights reserved.
+  * Please see the included README.md file for license terms and conditions.
+  -->
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="media_button_bar/css/media_button_bar.css">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="app_framework/2.1/css/af.ui.min.css">
+        <link rel="stylesheet" type="text/css" href="app_framework/2.1/css/icons.min.css">
+        <title>Blank App Designer Packaged Web App Project Template</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+        <!--
+  * The "meta viewport" tag (below) helps your app size appropriately to a device's ideal viewport.
+  * Note that Windows device viewports work better when initialized using the @viewport CSS rule.
+  * For a quick overview of "meta viewport" and @viewport, see this article:
+  *   http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag
+  * To see how it works, try your app on a real device with and without a "meta viewport" tag.
+  * Additional useful references include:
+  *   http://www.quirksmode.org/mobile/viewports.html
+  *   http://www.quirksmode.org/mobile/metaviewport/devices.html
+  *   https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
+-->
+
+        <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1"> -->
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
+
+        <style>
+            /* following three (cascaded) are equivalent to above three meta viewport statements */
+            /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
+            /* see http://dev.w3.org/csswg/css-device-adapt/ */
+                @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+                @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+                /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+        </style>
+
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+
+        <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+        <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work below -->
+        <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
+
+        <!-- Recommended location for your JavaScript libraries -->
+        <!-- These library references (below) are just examples to give you the general idea... -->
+        <!-- <script src="lib/mc/hammer.js"></script> -->
+        <!-- <script src="lib/ft/fastclick.js"></script> -->
+
+        <!--
+  * cordova.js is a phantom lib for "Cordova HTML5 web app," it does nothing in a "Standard HTML5 web app"
+  * Seeing a "Failed to load resource: net::ERR_FILE_NOT_FOUND" message caused by this "cordova.js" script?
+  * The cordova.js script is required if you convert your "Standard HTML5" project into a "Cordova" project.
+  * You can safely ignore the error or comment out this line if you will not be developing a Cordova app.
+-->
+        <script src="cordova.js" id="xdkJScordova_"></script>
+
+        <script src="js/app.js"></script>
+        <!-- for your event code, see README and file comments for details -->
+        <script src="js/init-app.js"></script>
+        <!-- for your init code, see README and file comments for details -->
+        <script src="xdk/init-dev.js"></script>
+        <!-- normalizes device and document ready events, see file for details -->
+        <!--            
+            You may substitute jQuery for the App Framework selector library.
+            See http://app-framework-software.intel.com/documentation.php#afui/afui_jquery
+        -->
+        <script type="application/javascript" src="app_framework/2.1/appframework.js"></script>
+        <script type="application/javascript" src="app_framework/2.1/appframework.ui.js" data-ver="1"></script>
+        <script type="application/javascript" src="js/index_user_scripts.js"></script>
+        <script type="application/javascript" src="app_framework/pageChangeRepeater.js"></script>
+        <script type="application/javascript" src="xdk/ad/af_subpage.js"></script>
+        <script type="application/javascript" src="app_framework/themeRelease.js"></script>
+        <script type="application/javascript" src="xdk/appdesigner/js/rest-of-space.js"></script>
+    </head>
+
+    <body id="afui" class="android light">
+
+        <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+        <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work above -->
+        <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
+        <header class="wrapping-col wrap-element uib_w_2" data-uib="app_framework/header" data-ver="2" id="af-header-0">
+            <h1>Title</h1>
+        </header>
+        <header class="wrapping-col wrap-element uib_w_3" data-uib="app_framework/header" data-ver="2" id="af-header-1">
+            <h1>Apps Menu</h1>
+        </header>
+        <header class="wrapping-col wrap-element uib_w_11 with-back" data-uib="app_framework/header" data-ver="2" id="af-header-2"><a class="button backButton">Back</a>
+            <h1>Communication</h1>
+        </header>
+        <header class="wrapping-col wrap-element uib_w_18 with-back" data-uib="app_framework/header" data-ver="2" id="af-header-3"><a class="button backButton">Back</a>
+            <h1>Social</h1>
+        </header>
+        <header class="wrapping-col wrap-element uib_w_23 with-back" data-uib="app_framework/header" data-ver="2" id="af-header-4"><a class="button backButton">Back</a>
+            <h1>Media</h1>
+        </header>
+        <header class="wrapping-col wrap-element uib_w_29 with-back" data-uib="app_framework/header" data-ver="2" id="af-header-5"><a class="button backButton">Back</a>
+            <h1>Mailing</h1>
+        </header>
+        <header class="wrapping-col wrap-element uib_w_33 with-back" data-uib="app_framework/header" data-ver="2" id="af-header-6"><a class="button backButton">Back</a>
+            <h1>Navigation</h1>
+        </header>
+        <header class="wrapping-col wrap-element uib_w_35 with-back" data-uib="app_framework/header" data-ver="2" id="af-header-7"><a class="button backButton">Back</a>
+            <h1>Storage</h1>
+        </header>
+        <header class="wrapping-col wrap-element uib_w_46 with-back" data-uib="app_framework/header" data-ver="2" id="af-header-8"><a class="button backButton">Back</a>
+            <h1>Games</h1>
+        </header>
+        <header class="wrapping-col wrap-element uib_w_56 with-back" data-uib="app_framework/header" data-ver="2" id="af-header-9"><a class="button backButton">Back</a>
+            <h1>Photographies</h1>
+        </header>
+        <div id="content" class="uwrap">
+
+            <div class="upage vertical-col panel body" id="uib_page_3" data-header="af-header-1" data-footer="af-footer-1">
+                <div id="uib_page_4" class="upage-content vertical-col">
+                    <ul class="list widget uib_w_4 d-margins" data-uib="app_framework/listview" data-ver="1">
+                        <li class="widget uib_w_5" data-uib="app_framework/listitem" data-ver="1"><a href="#uib_page_9" data-transition="fade" class="icon busy">Navigation</a>
+                        </li>
+                        <li class="widget uib_w_6" data-uib="app_framework/listitem" data-ver="1"><a href="#uib_page_7" data-transition="fade" class="icon headset">Media</a>
+                        </li>
+                        <li class="widget uib_w_7" data-uib="app_framework/listitem" data-ver="1"><a href="#uib_page_10" data-transition="fade" class="icon upload">Storage</a>
+                        </li>
+                    </ul>
+                    <ul class="list widget uib_w_8 d-margins listitems" data-uib="app_framework/listview" data-ver="1">
+                        <li class="widget uib_w_9" data-uib="app_framework/listitem" data-ver="1"><a href="#uib_page_6" data-transition="fade" class="icon chat">Social</a>
+                        </li>
+                        <li class="widget uib_w_10" data-uib="app_framework/listitem" data-ver="1"><a href="#uib_page_5" data-transition="fade" class="icon phone">Communication</a>
+                        </li>
+                        <li class="widget uib_w_8" data-uib="app_framework/listitem" data-ver="1"><a href="#uib_page_8" data-transition="fade" class="icon mail">Mailing</a>
+                        </li>
+                        <li class="widget uib_w_11" data-uib="app_framework/listitem" data-ver="1"><a href="#uib_page_11" data-transition="fade" class="icon heart">Games</a>
+                        </li>
+                        <li class="widget uib_w_12" data-uib="app_framework/listitem" data-ver="1"><a href="#uib_page_12" data-transition="fade" class="icon camera">Photographies</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="upage vertical-col panel" id="uib_page_5" data-header="af-header-2" data-footer="none">
+                <div class="uib-grid widget uib_w_12 grid-text grid-height d-margins" data-uib="layout/grid" data-ver="0">
+                    <div class="uib-grid-row">
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_13 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.facebook.orca&amp;hl=fr">
+                                <img src="images/communication/msg.png">
+                                <span class="uib-caption">Messenger</span>
+                            </a>
+                        </div>
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_14 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.skype.raider&amp;hl=fr">
+                                <img src="images/communication/skype.png">
+                                <span class="uib-caption">Skype</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="uib-grid-row">
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_15 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.viber.voip&amp;hl=fr">
+                                <img src="images/communication/viber.png">
+                                <span class="uib-caption">Viber</span>
+                            </a>
+                        </div>
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_16 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.whatsapp&amp;hl=fr">
+                                <img src="images/communication/watsapp.png">
+                                <span class="uib-caption">WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="upage vertical-col left panel" id="uib_page_6" data-header="af-header-3" data-footer="none">
+                <div class="uib-grid widget uib_w_17 grid-text grid-height d-margins" data-uib="layout/grid" data-ver="0">
+                    <div class="uib-grid-row">
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_19 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.instagram.android&amp;hl=fr">
+                                <img src="images/social/instg.png">
+                                <span class="uib-caption">Instagram</span>
+                            </a>
+                        </div>
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_20 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.facebook.katana&amp;hl=fr">
+                                <img src="images/social/fcb.png">
+                                <span class="uib-caption">Facebook</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="uib-grid-row">
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_21 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.twitter.android&amp;hl=fr">
+                                <img src="images/social/twitt.jpg">
+                                <span class="uib-caption">Twitter</span>
+                            </a>
+                        </div>
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_22 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.linkedin.android&amp;hl=fr">
+                                <img src="images/social/linkin.png">
+                                <span class="uib-caption">Linkedin</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="upage vertical-col left panel" id="uib_page_7" data-header="af-header-4" data-footer="none">
+                <div class="uib-grid widget uib_w_24 grid-text grid-height d-margins" data-uib="layout/grid" data-ver="0">
+                    <div class="uib-grid-row">
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_25 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=org.videolan.vlc.betav7neon&amp;hl=fr">
+                                <img src="images/media/vlc.png">
+                                <span class="uib-caption">VLC</span>
+                            </a>
+                        </div>
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_27 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.google.android.youtube&amp;hl=fr">
+                                <img src="images/media/youtube.png">
+                                <span class="uib-caption">Youtube</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="uib-grid-row">
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_26 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.zgz.supervideo&amp;hl=fr">
+                                <img src="images/media/AVP.png">
+                                <span class="uib-caption">Play Media</span>
+                            </a>
+                        </div>
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_28 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.dv.adm&amp;hl=fr">
+                                <img src="images/media/adm.png">
+                                <span class="uib-caption">Download</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="upage vertical-col panel" id="uib_page_8" data-header="af-header-5" data-footer="none">
+                <div class="uib-grid widget uib_w_30 grid-text grid-height d-margins" data-uib="layout/grid" data-ver="0">
+                    <div class="uib-grid-row">
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_31 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.google.android.gm">
+                                <img src="images/mail/gmail.png">
+                                <span class="uib-caption">Gmail</span>
+                            </a>
+                        </div>
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_32 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.yahoo.mobile.client.android.mail">
+                                <img src="images/mail/yahoo.png">
+
+                                <span class="uib-caption">Yahoo</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="uib-grid-row">
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_54 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.mailboxapp">
+                                <img src="images/mail/mailbox.png">
+                                <span class="uib-caption">Mailbox</span>
+                            </a>
+                        </div>
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_55 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.microsoft.office.outlook">
+                                <img src="images/mail/outlook.png">
+                                <span class="uib-caption">Outlook</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="upage vertical-col panel" id="uib_page_9" data-header="af-header-6" data-footer="none">
+                <div class="uib-grid widget uib_w_34 grid-text grid-height d-margins rest-of-height" data-uib="layout/grid" data-ver="0">
+                    <div class="uib-grid-row">
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_41 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.ksmobile.cb">
+                                <img src="images/browser/CM.png">
+                                <span class="uib-caption">CM</span>
+                            </a>
+                        </div>
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_42 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.mx.browser">
+                                <img src="images/browser/maxthon.jpg">
+
+                                <span class="uib-caption">Maxthon</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="uib-grid-row">
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_43 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=org.mozilla.firefox">
+                                <img src="images/browser/firefox.png">
+                                <span class="uib-caption">Mozilla</span>
+                            </a>
+                        </div>
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_44 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.android.chrome">
+                                <img src="images/browser/google.jpg">
+                                <span class="uib-caption">Chrome</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="upage vertical-col panel" id="uib_page_10" data-header="af-header-7" data-footer="none">
+                <div class="uib-grid widget uib_w_36 grid-text grid-height d-margins" data-uib="layout/grid" data-ver="0">
+                    <div class="uib-grid-row">
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_37 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.google.android.apps.docs">
+                                <img src="images/storage/Gdrive.png">
+                                <span class="uib-caption">Drive</span>
+                            </a>
+                        </div>
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_38 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.box.android">
+                                <img src="images/storage/box.png">
+                                <span class="uib-caption">Box</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="uib-grid-row">
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_39 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.microsoft.skydrive">
+                                <img src="images/storage/cloud.png">
+                                <span class="uib-caption">OneDrive</span>
+                            </a>
+                        </div>
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_40 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.dropbox.android">
+                                <img src="images/storage/dropbox.png">
+                                <span class="uib-caption">Dropbox</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="upage vertical-col left panel" id="uib_page_11" data-header="af-header-8" data-footer="none">
+                <div class="uib-grid widget uib_w_48 grid-text grid-height d-margins" data-uib="layout/grid" data-ver="0">
+                    <div class="uib-grid-row">
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_49 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.king.candycrushsaga">
+                                <img src="images/games/game4.png">
+                                <span class="uib-caption">Candy Crush</span>
+                            </a>
+                        </div>
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_50 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.midasplayer.apps.bubblewitchsaga2">
+                                <img src="images/games/game1.png">
+
+                                <span class="uib-caption">Bubble Witch 2</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="uib-grid-row">
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_51 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.midasplayer.apps.diamonddiggersaga">
+                                <img src="images/games/game3.png">
+
+                                <span class="uib-caption">Diamond Digger</span>
+                            </a>
+                        </div>
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_53 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.king.candycrushsodasaga">
+                                <img src="images/games/game2.png">
+
+                                <span class="uib-caption">Candy Crush Soda</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="upage vertical-col panel" id="uib_page_12" data-header="af-header-9" data-footer="none">
+                <div class="uib-grid widget uib_w_57 grid-text grid-height d-margins" data-uib="layout/grid" data-ver="0">
+                    <div class="uib-grid-row">
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_51 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.iovchev.selfieseditor">
+                                <img src="images/photographie/selfi.jpg">
+
+                                <span class="uib-caption">RétroSelfie</span>
+                            </a>
+                        </div>
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_51 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.photo.afterlight.effect.tool">
+                                <img src="images/photographie/Afterlight.png">
+
+                                <span class="uib-caption">After-Light-Free</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="uib-grid-row">
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_51 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.venticake.retrica">
+                                <img src="images/photographie/retrica.png">
+
+                                <span class="uib-caption">Retrica</span>
+                            </a>
+                        </div>
+                        <div class="uib-grid-cell widget-container">
+                            <a class="uib-graphic-button default-graphic-sizing default-image-sizing hover-graphic-button active-graphic-button default-graphic-button default-graphic-text widget uib_w_51 d-margins media-button-text-bottom" data-uib="media/graphic_button" data-ver="0"
+                            href="https://play.google.com/store/apps/details?id=com.tafayor.selfcamerashot">
+                                <img src="images/photographie/Self.png">
+
+                                <span class="uib-caption">Self Camera Shot</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+             
+            </div>
+        </div>
+        <footer class="wrap-element uib_w_45" data-uib="app_framework/footer" data-ver="1" id="af-footer-1">
+            <center><a href="https://www.facebook.com/SmartSofts?ref=hl"><img src="images/favorite_logo.png"></a></center>
+        </footer>
+       
+    </body>
+
+</html>
